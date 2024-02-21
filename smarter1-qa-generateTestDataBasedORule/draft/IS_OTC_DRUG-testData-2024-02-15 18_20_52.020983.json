@@ -1,0 +1,74 @@
+{
+    "tests": [
+        {
+            "match": "only_specific_rule",
+            "type": "general",
+            "request": {
+                "intended_use": "Protein Supplements: Popular among athletes, these supplements come in forms like whey and soy protein to support muscle repair and growth.",
+                "product_name": "Pure Protein Powder",
+                "item_type": "Supplement",
+                "active_ingredient": "Whey Protein"
+            },
+            "validation": {
+                "rule_name": ["Product is a Nutritional Supplement"],
+                "output_value": false
+            }
+        },
+        {
+            "match": "only_specific_rule",
+            "type": "general",
+            "request": {
+                "intended_use": "Vitamins: Supplements that provide specific vitamins lacking in a person's diet, such as Vitamin D for bone health and Vitamin C for immune support.",
+                "product_name": "Nature's Bounty Vitamin C",
+                "item_type": "Supplement",
+                "active_ingredient": "Vitamin C"
+            },
+            "validation": {
+                "rule_name": ["Product is a Common Nutritional Supplement Category"],
+                "output_value": false
+            }
+        },
+        {
+            "match": "only_specific_rule",
+            "type": "general",
+            "request": {
+                "intended_use": "Analgesic (Pain Reliever)",
+                "product_name": "Tylenol Extra Strength",
+                "item_type": "Over the Counter Medicine",
+                "active_ingredient": "acetaminophen"
+            },
+            "validation": {
+                "rule_name": ["Active Ingredients"],
+                "output_value": true
+            }
+        },
+        {
+            "match": "only_specific_rule",
+            "type": "general",
+            "request": {
+                "intended_use": "Analgesic (Pain Reliever)",
+                "product_name": "Motrin IB",
+                "item_type": "Over the Counter Medicine",
+                "active_ingredient": "ibuprofen"
+            },
+            "validation": {
+                "rule_name": ["Intended Use is OTC Drug Category"],
+                "output_value": true
+            }
+        },
+        {
+            "match": "mix_rules",
+            "type": "general",
+            "request": {
+                "intended_use": "Analgesic (Pain Reliever)",
+                "product_name": "Motrin IB",
+                "item_type": "Over the Counter Medicine",
+                "active_ingredient": "ibuprofen"
+            },
+            "validation": {
+                "rule_name": ["Active Ingredients", "Intended Use is OTC Drug Category"],
+                "output_value": true
+            }
+        }
+    ]
+}

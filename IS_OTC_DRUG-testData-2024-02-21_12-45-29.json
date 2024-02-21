@@ -1,0 +1,62 @@
+{"tests": [
+    {
+        "request": {
+            "intended_use": "Vitamins: Supplements that provide specific vitamins lacking in a person's diet, such as Vitamin D for bone health and Vitamin C for immune support.",
+            "product_name": "Multi-Mineral and Vitamin",
+            "item_type": "Over-the-counter drug",
+            "active_ingredient": "Vitamin C"
+        },
+        "validation": {
+            "rule_name": ["Product is a Nutritional Supplement","Product is a Common Nutritional Supplement Category"],
+            "output_value": false
+        }
+    },
+    {
+        "request": {
+            "intended_use": "Acne Treatment",
+            "product_name": "ClearSkin Acne Treatment",
+            "item_type": "Over-the-counter drug",
+            "active_ingredient": "clotrimazole"
+        },
+        "validation": {
+            "rule_name": ["Intended Use is OTC Drug Category", "Active Ingredients"],
+            "output_value": true
+        }
+    },
+    {
+        "request": {
+            "intended_use": "Antacid",
+            "product_name": "Heartburn relief",
+            "item_type": "OTC Medicine",
+            "active_ingredient": "omeprazole"
+        },
+        "validation": {
+            "rule_name": ["Intended Use is OTC Drug Category", "Active Ingredients"],
+            "output_value": true
+        }
+    },
+    {
+        "request": {
+            "intended_use": "Antibacterial",
+            "product_name": "Hand Sanitizer",
+            "item_type": "OTC Medicine",
+            "active_ingredient": "Isopropyl Alcohol"
+        },
+        "validation": {
+            "rule_name": ["Intended Use is OTC Drug Category"],
+            "output_value": true
+        }
+    },
+    {
+        "request": {
+            "intended_use": "Probiotics: Contain beneficial bacteria that support gut health, often recommended for maintaining a healthy gut microbiome.",
+            "product_name": "Probiotic Complex",
+            "item_type": "Nutritional Supplement",
+            "active_ingredient": "Bifidobacterium Animalis"
+        },
+        "validation": {
+            "rule_name": ["Product is a Nutritional Supplement", "Product is a Common Nutritional Supplement Category"],
+            "output_value": false
+        }
+    }
+]}

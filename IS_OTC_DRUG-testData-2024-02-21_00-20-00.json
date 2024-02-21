@@ -1,0 +1,47 @@
+
+    {
+        "tests": [
+            {
+                "match": "Only a specific rule",
+                "type": "general",
+                "request": {
+                    "intended_use": "Vitamins: Supplements that provide specific vitamins lacking in a person's diet, such as Vitamin D for bone health and Vitamin C for immune support.",
+                    "product_name": "Example Product",
+                    "item_type": "Example Type",
+                    "active_ingredient": "Example Ingredient"
+                },
+                "validation": {
+                    "rule_name": ["Product is a Common Nutritional Supplement Category"],
+                    "output_value": false
+                }
+            },
+            {
+                "match": "Only a specific rule",
+                "type": "border_values",
+                "request": {
+                    "intended_use": "Acne Treatment",
+                    "product_name": "Example Product",
+                    "item_type": "Example Type",
+                    "active_ingredient": "lidocaine"
+                },
+                "validation": {
+                    "rule_name": ["Intended Use is OTC Drug Category", "Active Ingredients"],
+                    "output_value": true
+                }
+            },
+            {
+                "match": "mix_rules",
+                "type": "general",
+                "request": {
+                    "intended_use": "Analgesic (Pain Reliever)",
+                    "product_name": "product name or marketing claims make a claim to treat, cure, or prevent a disease or medical condition",
+                    "item_type": "Example Type",
+                    "active_ingredient": "acetaminophen"
+                },
+                "validation": {
+                    "rule_name": ["Product Name or Marketing Claims", "Intended Use is OTC Drug Category", "Active Ingredients"],
+                    "output_value": true
+                }
+            }
+        ]
+    }
